@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using pipeline.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Encodings.Web;
 
-namespace pipeline.Controllers
+namespace MvcMovie.Controllers
 {
-    public class HomeController : Controller
+    public class HelloWorldController : Controller
     {
-        public IActionResult Index()
+        // 
+        // GET: /HelloWorld/
+
+        public string Index()
         {
-            return View();
+            return "This is my default action...";
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        // 
+        // GET: /HelloWorld/Welcome/ 
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public string Welcome()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return "This is the Welcome action method...";
         }
     }
 }
